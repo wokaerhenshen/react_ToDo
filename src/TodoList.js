@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react';
 import TodoItem from './TodoItem';
+import './jscss.css';
 
 class TodoList extends Component {
   
@@ -71,7 +72,15 @@ class TodoList extends Component {
     //所以要把函数跟button的this绑定起来（因为btn指向的是class）
     return (
       <Fragment>
-        <input value={this.state.inputValue} onChange={this.handleInputChange}/>
+        {
+          // use htmlFor instead of 'for' in react
+        }
+        <label htmlFor='typeArea'>输入内容</label>
+        <input
+        id='typeArea'  
+        className = 'input'
+        value={this.state.inputValue}
+        onChange={this.handleInputChange}/>
         
         <button onClick={this.handleBtnClick}>add</button>
         <ul>
